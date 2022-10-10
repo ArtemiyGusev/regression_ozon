@@ -1,7 +1,7 @@
-from tests.controls.dropdown import DropDown
-from tests.controls.check_table_text import CheckTableText
-from tests.controls.datepicker import DatePicker
-from tests.controls.subject import Subject
+from base_page.controls.dropdown import DropDown
+from base_page.controls.check_table_text import CheckTableText
+from base_page.controls.datepicker import DatePicker
+from base_page.controls.subject import Subject
 
 
 class ApplicationManager:

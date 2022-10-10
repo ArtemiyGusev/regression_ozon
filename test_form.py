@@ -1,5 +1,5 @@
-from tests.helper.acceptance_test_modul import url_open_size, add_file, remove_element
-from tests.controls.application_manager import app
+from base_page.helper.acceptance_test_modul import url_open_size, add_file, remove_element
+from base_page.controls.application_manager import app
 from env import *
 import allure
 from allure_commons.types import Severity
