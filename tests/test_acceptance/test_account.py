@@ -5,6 +5,7 @@ import allure
 from allure_commons.types import Severity
 from selene.support.shared.jquery_style import s, ss
 from base_page.pages.pick_point import select_pick_point
+from base_page.pages.change_city import change_city
 
 
 def test_case_practice_form():
@@ -16,6 +17,7 @@ def test_case_practice_form():
     with allure.step('Открываем /automation-practice-form'):
         url_open_size('/internet-magazin/devices')
         passing_modal()
+        change_city()
 
     with allure.step('Заполняем поля данными'):
         scroll_click(add_device)

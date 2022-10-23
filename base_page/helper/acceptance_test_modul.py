@@ -40,7 +40,8 @@ def passing_modal():
 
 
 def scroll_click(element):
-    browser.execute_script(f"document.querySelector('{element}').scrollIntoView({{block: 'center', inline: 'nearest'}})")
+    browser.execute_script(
+        f"document.querySelector('{element}').scrollIntoView({{block: 'center', inline: 'nearest'}})")
     s(element).click()
 
 
