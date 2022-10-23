@@ -1,7 +1,19 @@
 import os
+import time
 
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
+from selene import query, be
+import time
+from selene import be, have
+from selene.core.wait import Command
+from selene.support import webdriver
+from selene.support.shared import browser
+from selene.support.shared.jquery_style import s
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selene import query
+import re
 
 
 def add_file(element, file_name):
@@ -20,3 +32,23 @@ def remove_element(element):
             f"var el = document.querySelectorAll('{element}'); if (el.length > 0) {{ el[0].remove(); }}")
     except:
         pass
+
+
+def passing_modal():
+    s("#age-verification").type('11111990')
+    s("[class='age-verification-form__btn g-btn']").click()
+
+
+def scroll_click(element):
+    browser.execute_script(f"document.querySelector('{element}').scrollIntoView({{block: 'center', inline: 'nearest'}})")
+    s(element).click()
+
+
+def click_with_offset(x: int, y: int) -> Command:
+    action = ActionChains(browser.driver)
+
+    return Command(
+        f'click with offset x {x}, y {y}',
+        lambda element: action.move_to_element_with_offset(element(), x, y).click().perform()
+
+    )

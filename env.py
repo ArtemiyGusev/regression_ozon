@@ -1,9 +1,8 @@
-from base_page.controls.datepicker import now_date
-
-table_name = 'table td'
-send_data = '#submit'
-send_picture_button = '#uploadPicture'
-file_name1 = 'resources/123.png'
+add_device = '#maincontent > div.page.page--default > div.product-listing-wrapper.product-listing-wrapper--without-image > div.product-listing__columns-wrapper > div > section > div > div > div > div.product-list-sticks__items-wrapper > div:nth-child(1) > ul > li:nth-child(1) > div > div.product-item-details.product-tile__content > div.product-item-inner > div.product.actions.product-item-actions > div > form > div > button'
+add_device1 = '(//*[@title=["Добавить в корзину"])[1]'
+go_to_checkout = '[class^="g-btn g-btn-black cart-popup__to-cart"]'
+delivery_pick_point = '//*[contains(@class,"RadioMethods_optionLabel")][text()="Пункты выдачи заказов"]/..'
+select_point = '[class*="Pickup_selectBtn"]'
 element_in_list_city = '//*[contains(text(),"Delhi")]'
 list_city = '#city'
 element_in_list_state = '//*[contains(text(),"NCR")]'
@@ -14,24 +13,3 @@ date_of_birth = '#dateOfBirth'
 date_of_birth_input = '#dateOfBirthInput'
 subjects_input = '#subjectsInput'
 select_element_in_subject = '#react-select-2-option-0'
-
-expected_result_in_table = 'Student Name', \
-                           'Jack Shepard', \
-                           'Student Email', \
-                           'Jack@mail.ru', \
-                           'Gender', \
-                           'Male', \
-                           'Mobile', \
-                           '4815162342', \
-                           'Date of Birth', \
-                           now_date.strftime("%d %B,%Y"), \
-                           'Subjects', \
-                           'English', \
-                           'Hobbies', \
-                           'Sports', \
-                           'Picture', \
-                           '123.png', \
-                           'Address', \
-                           'Oceanic', \
-                           'State and City', \
-                           'NCR Delhi'
