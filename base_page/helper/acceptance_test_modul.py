@@ -6,11 +6,13 @@ from selene.support.shared.jquery_style import s, ss
 from selene import query, be
 import time
 from selene import be, have
+import requests
 from selene.core.wait import Command
 from selene.support import webdriver
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selene import query
 import re
@@ -23,6 +25,8 @@ def add_file(element, file_name):
 def url_open_size(url, width=1920, height=1080):
     browser.config.browser_name = 'chrome'
     browser.open(url)
+    browser.config.driver.add_cookie({'name': 'bat_ageverified_2', 'value': 'true', 'path': '/'})
+    browser.driver.refresh()
     browser.config.driver.set_window_size(width, height)
 
 
@@ -35,8 +39,9 @@ def remove_element(element):
 
 
 def passing_modal():
-    s("#age-verification").type('11111990')
-    s("[class='age-verification-form__btn g-btn']").click()
+    if s("#age-verification").matching(be.visible):
+        s("#age-verification").type('11111990')
+        s("[class='age-verification-form__btn g-btn']").click()
 
 
 def scroll_click(element):

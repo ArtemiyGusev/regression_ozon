@@ -1,3 +1,5 @@
+import time
+
 from base_page.helper.acceptance_test_modul import url_open_size, add_file, remove_element, passing_modal, scroll_click
 from base_page.controls.application_manager import app
 from env import *
@@ -17,18 +19,24 @@ def test_case_practice_form():
     with allure.step('Открываем /automation-practice-form'):
         url_open_size('/internet-magazin/devices')
         passing_modal()
-        change_city()
 
     with allure.step('Заполняем поля данными'):
         scroll_click(add_device)
 
         s(go_to_checkout).click()
 
+        change_city()
+
         s(delivery_pick_point).click()
 
         s(select_point).click()
 
         select_pick_point()
+
+
+
+
+
         #s('//*[@id="userEmail"]').type('Jack@mail.ru')
         #s('//*[@id="userNumber"]').type('4815162342')
         #s('//*[@id="currentAddress"]').type('Oceanic')
