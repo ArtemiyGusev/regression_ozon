@@ -1,5 +1,3 @@
-import datetime
-from selene.support.shared.jquery_style import s
 from selene.core.entity import Element
 
 
