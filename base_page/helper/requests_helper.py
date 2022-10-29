@@ -24,6 +24,6 @@ class BaseSession(Session):
         return response
 
 
-def reqres() -> BaseSession:
-    reqres_url = os.getenv('reqres')
-    return BaseSession(base_url=reqres_url)
+def myglo() -> BaseSession:
+    myglo_url = os.getenv('myglo')
+    return BaseSession(base_url=myglo_url)
