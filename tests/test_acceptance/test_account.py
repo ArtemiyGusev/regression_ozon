@@ -13,8 +13,8 @@ from base_page.controls.application_manager import app
 def test_checkout_not_authorize():
     allure.dynamic.tag("Web application")
     allure.dynamic.severity(Severity.CRITICAL)
-    allure.dynamic.feature("Тесты automation-practice-form")
-    allure.dynamic.story("Проверка отправленных данных в таблице через форму")
+    allure.dynamic.feature("Тесты myglo.ru")
+    allure.dynamic.story("Проверка требования авторизации после выбора Pick point")
 
     with allure.step('Открываем /automation-practice-form'):
         url_open_size('/internet-magazin/devices')
@@ -43,11 +43,11 @@ def test_checkout_not_authorize():
 def test_check_postcode():
     allure.dynamic.tag("Web application")
     allure.dynamic.severity(Severity.CRITICAL)
-    allure.dynamic.feature("Тесты automation-practice-form")
+    allure.dynamic.feature("Тесты myglo.ru")
     allure.dynamic.story("Проверка на наличие и корректность посткода после ввода адреса")
 
-    with allure.step('Открываем Главную страницу'):
-        url_open_size('/')
+    with allure.step('Открываем страницу входа'):
+        url_open_size('/customer/account/login')
         passing_modal()
         change_city()
 
@@ -68,11 +68,11 @@ def test_check_postcode():
 def test_subscription():
     allure.dynamic.tag("Web application")
     allure.dynamic.severity(Severity.CRITICAL)
-    allure.dynamic.feature("Тесты automation-practice-form")
+    allure.dynamic.feature("Тесты myglo.ru")
     allure.dynamic.story("Проверка работоспособности настроек в подписке")
 
-    with allure.step('Открываем Главную страницу'):
-        url_open_size('/')
+    with allure.step('Открываем страницу входа'):
+        url_open_size('/customer/account/login')
         passing_modal()
         change_city()
 

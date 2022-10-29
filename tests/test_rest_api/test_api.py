@@ -1,5 +1,7 @@
 import random
 
+import allure
+from allure_commons.types import Severity
 from voluptuous import Schema, ALLOW_EXTRA
 from pytest_voluptuous import S
 from base_page.helper.requests_helper import myglo
@@ -7,40 +9,58 @@ from base_page.helper.module_helper import rand_string, rand_int
 from base_page.api_controls.am_bearer_authenticated import AmBearerAuthenticated
 
 
-def test_get_users_page():
-    schema = Schema({
-        'page': int,
-        'per_page': int,
-        'total': int,
-        'data': object,
-        'support': {'text': str}
+def test_check_device():
+    allure.dynamic.tag("Web application Api")
+    allure.dynamic.severity(Severity.CRITICAL)
+    allure.dynamic.feature("Тесты myglo.ru")
+    allure.dynamic.story("Проверка Добавления девайся в корзину")
 
+    body = {
+        "cartItem":
+            {
+                "sku": "10119143",
+                "qty": 1
+            }
+        }
+    response = myglo().post("rest/ru_ru/V1/carts/mine/items", json=body, auth=AmBearerAuthenticated("hCXriQ9U4QYoN@test.ru", "Test202020"))
+
+    schema = Schema({
+        "sku": str,
+        "qty": int,
+        "name": str,
+        "product_type": str
     },
         extra=ALLOW_EXTRA,
     )
-    response = myglo().get("api/users?page=2")
     assert response.status_code == 200
     assert S(schema) == response.json()
-    assert response.json()['page'] == 2
+    assert response.json()['sku'] == "10119143"
 
 
-def test_post_create_users():
-    body = {
-        "name": "morpheus",
-        "job": "leader"
-    }
+def test_get_info_customer():
+    response = myglo().get("rest/ru_ru/V1/customers/me", auth=AmBearerAuthenticated("hCXriQ9U4QYoN@test.ru", "Test202020"))
+
     schema = Schema({
-        "name": str,
-        "job": str,
-        "id": str,
-        "createdAt": str
-    })
-    response = myglo().post("api/users", params=body)
-    assert response.status_code == 201
+        "firstname": str,
+        "lastname": str,
+        "gender": int,
+        "store_id": int
+    },
+        extra=ALLOW_EXTRA
+    )
+
+    assert response.status_code == 200
     assert S(schema) == response.json()
+    print(response.json())
+    assert response.json()["id"] == 2136524
 
 
 def test_register_user():
+    allure.dynamic.tag("Web application Api")
+    allure.dynamic.severity(Severity.CRITICAL)
+    allure.dynamic.feature("Тесты myglo.ru")
+    allure.dynamic.story("Проверка смены пароля кастомера, после регистрации")
+
     body = {
         "customer": {
             "store_id": 2,
@@ -66,26 +86,12 @@ def test_register_user():
     assert S(schema) == response_reg.json()
     assert response_reg.status_code == 200
 
-    body = {
-        "username": response_reg.json()["email"],
-        "password": "Test20202020]"
-    }
-    token = myglo().post("rest/ru_ru/V1/integration/customer/token", json=body)
-
     headers = {'Content-type': 'application/json'}
     body = {
         "currentPassword": "Test20202020]",
         "newPassword": "Test202020"
     }
     response_change_password = myglo().put("rest/V1/customers/me/password", json=body, headers=headers,
-                                           auth=AmBearerAuthenticated(token.json()))
+                                           auth=AmBearerAuthenticated(response_reg.json()["email"], "Test20202020]"))
     assert response_change_password.json() == True
     assert response_change_password.status_code == 200
-
-
-def test_delete_user():
-    # response = myglo().delete("api/users/7")
-    # assert response.status_code == 204
-    rand = ''.join(
-        [random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM')) for x in range(12)])
-    print(rand)

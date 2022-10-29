@@ -24,7 +24,7 @@ def add_file(element, file_name):
 
 def url_open_size(url, width=1920, height=1080):
     browser.config.browser_name = 'chrome'
-    browser.open(url)
+    browser.open(url).wait_until(5)
     browser.config.driver.add_cookie({'name': 'bat_ageverified_2', 'value': 'true', 'path': '/'})
     browser.driver.refresh()
     browser.config.driver.set_window_size(width, height)

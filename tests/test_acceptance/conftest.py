@@ -23,7 +23,7 @@ def load_env():
 
 @pytest.fixture(scope='function', autouse=True)
 def driver_init(request):
-#def driver_init():
+    # def driver_init():
     browser_version = request.config.getoption('--browser_version')
     options = Options()
     prefs = {"profile.default_content_setting_values.geolocation": 2}
@@ -46,6 +46,11 @@ def driver_init(request):
         options=options)
 
     browser.config.driver = driver
+
+    browser.config.hold_browser_open = (
+            os.getenv('selene.hold_browser_open', 'false').lower() == 'true'
+    )
+    browser.config.timeout = float(os.getenv('selene.timeout', '3'))
     browser.config.base_url = 'https://www.myglo.ru'
 
     browser_config = Browser(Config(driver))
