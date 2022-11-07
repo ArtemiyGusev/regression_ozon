@@ -5,7 +5,7 @@
     "comment": "link to pull request",
     "reportLink": "https://jenkins.autotests.cloud/job/artemiy-qa_guru_python_1_9_jenkins/15/",
     "language": "en",
-    "allureFolder": "C:\\Users\\Artemiy\\PycharmProjects\\proj\\regression_ozon\\allure-report/",
+    "allureFolder": "allure-report/",
     "enableChart": true
   },
   "telegram": {

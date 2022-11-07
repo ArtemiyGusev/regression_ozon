@@ -51,7 +51,6 @@ def test_get_info_customer():
 
     assert response.status_code == 200
     assert S(schema) == response.json()
-    print(response.json())
     assert response.json()["id"] == 2136524
 
 
