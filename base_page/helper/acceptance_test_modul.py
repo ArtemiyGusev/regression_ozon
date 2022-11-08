@@ -58,3 +58,7 @@ def click_with_offset(x: int, y: int) -> Command:
         lambda element: action.move_to_element_with_offset(element(), x, y).click().perform()
 
     )
+
+
+def go_to_page(url):
+    browser.open(url).wait_until(5)

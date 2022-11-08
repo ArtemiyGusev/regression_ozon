@@ -94,3 +94,45 @@ def test_register_user():
                                            auth=AmBearerAuthenticated(response_reg.json()["email"], "Test20202020]"))
     assert response_change_password.json() == True
     assert response_change_password.status_code == 200
+
+
+def test_delete_all_device_api():
+    allure.dynamic.tag("Web application Api")
+    allure.dynamic.severity(Severity.CRITICAL)
+    allure.dynamic.feature("Тесты myglo.ru")
+    allure.dynamic.story("Проверка удаления девайся из корзину, после его добавления")
+
+    body = {
+        "cartItem":
+            {
+                "sku": "10119143",
+                "qty": 1
+            }
+        }
+    myglo().post("rest/ru_ru/V1/carts/mine/items", json=body, auth=AmBearerAuthenticated("dfgdr33drgdr@test.ru", "Test20202020]"))
+
+    devices = myglo().get("rest/ru_ru/V1/carts/mine/items/", auth=AmBearerAuthenticated('dfgdr33drgdr@test.ru', 'Test20202020]'))
+    for device in devices.json():
+        response = myglo().delete("rest/ru_ru/V1/carts/mine/items/" + str(device['item_id']), auth=AmBearerAuthenticated('dfgdr33drgdr@test.ru', 'Test20202020]'))
+        assert response.json() == True
+        assert response.status_code == 200
+
+
+def test_check_add_my_device():
+    allure.dynamic.tag("Web application Api")
+    allure.dynamic.severity(Severity.CRITICAL)
+    allure.dynamic.feature("Тесты myglo.ru")
+    allure.dynamic.story("Проверка на добавление девайса в мои девайсы")
+
+    body = {
+        "another_store_name": "",
+        "batch_number": "N0I29NAWC4",
+        "place_of_purchase": "100000001",
+        "purchase_date": "11/11/2019",
+        "sku": "10120784",
+        "store_name": "100000000"
+      }
+
+    response = myglo().post("rest/ru_ru/V1/device-management/register", json=body, auth=AmBearerAuthenticated("dfgdr33drgdr@test.ru", "Test20202020]"))
+    assert response.status_code == 200
+    assert response.json()[0]['product_id'] == '340'
