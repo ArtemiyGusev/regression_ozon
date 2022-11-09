@@ -28,9 +28,6 @@ def driver_management():
 
     session_id = browser.config.driver.session_id
 
-    # attach.screenshot_as("Last screenshot");
-    # attach.page_source();
-
     browser.quit()
     '''
     # was:

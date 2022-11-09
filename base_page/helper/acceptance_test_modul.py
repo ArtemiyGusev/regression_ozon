@@ -1,21 +1,9 @@
 import os
-import time
-
-from selene.support.shared import browser
-from selene.support.shared.jquery_style import s, ss
-from selene import query, be
-import time
-from selene import be, have
-import requests
+from selene import be
 from selene.core.wait import Command
-from selene.support import webdriver
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s
 from selenium.webdriver import ActionChains
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
-from selene import query
-import re
 
 
 def add_file(element, file_name):

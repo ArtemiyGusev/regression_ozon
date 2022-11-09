@@ -1,5 +1,4 @@
 from selene.support.shared.jquery_style import s
-from selene import be
 
 
 def change_city():

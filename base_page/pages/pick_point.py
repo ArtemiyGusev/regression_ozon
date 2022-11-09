@@ -1,5 +1,5 @@
 from selene import be
-from selene.support.shared.jquery_style import s, ss
+from selene.support.shared.jquery_style import s
 from selene import query
 import re
 from selene.support.shared import browser

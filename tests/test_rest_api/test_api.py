@@ -1,5 +1,3 @@
-import random
-
 import allure
 from allure_commons.types import Severity
 from voluptuous import Schema, ALLOW_EXTRA
