@@ -145,15 +145,16 @@ def test_add_my_device(name, number, email, comment, error):
     allure.dynamic.feature("Тесты myglo.ru")
     allure.dynamic.story("Проверка что кнопка оформить заказ стала активной после прохождения шагов на чекауте")
 
-    with allure.step('Открываем /customer/account/login'):
+    with allure.step('Открываем /obratnaya-svyaz'):
         url_open_size('/obratnaya-svyaz')
         passing_modal()
 
+    with allure.step('Заполняем форму обратной связи'):
         s('[name="name"]').type(name)
         s('#tel').type(number)
         s('[name="email"]').type(email)
         s('[name="comment"]').type(comment)
         s('[class^="Button"]').click()
-
+    with allure.step('Проверяем наличие сообщения об ошибке'):
         s(f'//*[contains(@class,"Field_error")][text()="{error}"]').should(be.visible)
 
