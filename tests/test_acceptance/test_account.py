@@ -129,7 +129,7 @@ def test_checkout_button_enabled():
     with allure.step('Выбираем метод оплаты Оплата картой при доставке'):
         s('//*[text()="Оплата картой при доставке"]/..').click()
 
-    with allure.step('Проверяем что кнока Оформить заказ стала активной'):
+    with allure.step('Проверяем что кнопка Оформить заказ стала активной'):
         s('[class^="Button_button"]').should(be.enabled)
 
 
@@ -155,6 +155,7 @@ def test_add_my_device(name, number, email, comment, error):
         s('[name="email"]').type(email)
         s('[name="comment"]').type(comment)
         s('[class^="Button"]').click()
+
     with allure.step('Проверяем наличие сообщения об ошибке'):
         s(f'//*[contains(@class,"Field_error")][text()="{error}"]').should(be.visible)
 
