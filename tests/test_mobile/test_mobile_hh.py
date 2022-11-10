@@ -1,4 +1,5 @@
 import allure
+import pytest
 from allure_commons.types import Severity
 from selene import be, have
 from selene.support.shared import browser
@@ -27,30 +28,23 @@ def test_login():
         browser.element('«email@test.ru»').should(be.visible)
 
 
-def test_check_category():
+@pytest.mark.parametrize("element_click, element_check", [
+    ("«Избранное»", "//android.widget.FrameLayout[@content-desc='Избранное']"),
+    ("«Отклики»", "//android.widget.FrameLayout[@content-desc='Отклики']"),
+    ("«Сообщения»", "//android.widget.FrameLayout[@content-desc='Сообщения']"),
+    ("«Профиль»", "//android.widget.FrameLayout[@content-desc='Профиль']"),
+])
+def test_check_category(element_click, element_check):
     allure.dynamic.tag("Mobile android application")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты hh")
-    allure.dynamic.story("Проверка категорий")
 
     with title('Закрываем форму авторизации'):
         browser.element('#fragment_intentions_onboarding_choose_direction_image_close').tap()
 
-    with title('Клик и проверка открытия страницы Избранное'):
-        browser.element('«Избранное»').tap()
-        browser.element('//android.widget.FrameLayout[@content-desc="Избранное"]').should(be.visible)
-
-    with title('Клик и проверка открытия страницы Избранное'):
-        browser.element('«Отклики»').tap()
-        browser.element('//android.widget.FrameLayout[@content-desc="Отклики"]').should(be.visible)
-
-    with title('Клик и проверка открытия страницы Сообщения'):
-        browser.element('«Сообщения»').tap()
-        browser.element('//android.widget.FrameLayout[@content-desc="Сообщения"]').should(be.visible)
-
-    with title('Клик и проверка открытия страницы Профиля'):
-        browser.element('«Профиль»').tap()
-        browser.element('//android.widget.FrameLayout[@content-desc="Профиль"]').should(be.visible)
+    with title('Клик и проверка открытия категорий'):
+        browser.element(element_click).tap()
+        browser.element(element_check).should(be.visible)
 
 
 def test_check_notifications():
