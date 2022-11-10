@@ -2,7 +2,7 @@ from base_page.helper.requests_helper import myglo
 
 
 class AmBearerAuthenticated:
-    def __init__(self, email, password):
+    def __init__(self, email='hCXriQ9U4QYoN@test.ru', password='test20202020]'):
         self.email = email
         self.password = password
 

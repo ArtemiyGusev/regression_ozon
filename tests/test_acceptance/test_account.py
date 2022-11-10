@@ -54,7 +54,7 @@ def test_check_postcode():
         change_city()
 
     with allure.step('Вход в аккаунт'):
-        sign_in(email='dfgdr33drgdr@test.ru', password='Test20202020]')
+        sign_in()
 
     with allure.step('Переход в адресную книгу'):
         s('//*[text()="Адресная книга"]').click()
@@ -79,7 +79,7 @@ def test_subscription():
         change_city()
 
     with allure.step('Вход в аккаунт'):
-        sign_in(email='dfgdr33drgdr@test.ru', password='Test20202020]')
+        sign_in()
 
     with allure.step('Переход в рассылки'):
         s('//*[text()="Рассылка"]').click()
@@ -106,13 +106,13 @@ def test_checkout_button_enabled():
         change_city()
 
     with allure.step('Вход в аккаунт'):
-        sign_in(email='dfgdr33drgdr@test.ru', password='Test20202020]')
+        sign_in()
 
     with allure.step('Чистим корзину'):
-        delete_all_device_api(email='dfgdr33drgdr@test.ru', password='Test20202020]')
+        delete_all_device_api()
 
     with allure.step('Добавляем девайс в корзину'):
-        add_device_api(device='10119143', email='dfgdr33drgdr@test.ru', password='Test20202020]')
+        add_device_api(device='10119143')
 
     with allure.step('Переходим на чекаут'):
         go_to_page('/checkout')

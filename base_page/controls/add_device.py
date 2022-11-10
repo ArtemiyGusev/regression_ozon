@@ -7,7 +7,7 @@ def add_device_click(device):
     scroll_click(device)
 
 
-def add_device_api(device, email, password, qty=1):
+def add_device_api(device, email='dfgdr33drgdr@test.ru', password='Test20202020]', qty=1):
     body = {
         "cartItem":
             {
@@ -19,7 +19,7 @@ def add_device_api(device, email, password, qty=1):
     assert response.status_code == 200
 
 
-def delete_all_device_api(email, password):
+def delete_all_device_api(email='dfgdr33drgdr@test.ru', password='Test20202020]'):
     devices = myglo().get("rest/ru_ru/V1/carts/mine/items/",
                           auth=AmBearerAuthenticated(email, password))
     for device in devices.json():
