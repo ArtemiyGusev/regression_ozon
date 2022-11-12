@@ -4,7 +4,7 @@ from base_page.helper.acceptance_test_modul import *
 from env import *
 import allure
 from allure_commons.types import Severity
-from selene.support.shared.jquery_style import s, ss
+from selene.support.shared.jquery_style import s
 from base_page.pages.pick_point import select_pick_point
 from base_page.pages.change_city import change_city
 from base_page.pages.sign_in import sign_in

@@ -50,7 +50,7 @@ def driver_init(request):
     browser.config.hold_browser_open = (
             os.getenv('selene.hold_browser_open', 'false').lower() == 'true'
     )
-    browser.config.timeout = float(os.getenv('selene.timeout', '3'))
+    browser.config.timeout = float(os.getenv('selene.timeout', '10'))
     browser.config.base_url = 'https://www.myglo.ru'
 
     browser_config = Browser(Config(driver))
