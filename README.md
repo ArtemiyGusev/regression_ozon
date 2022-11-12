@@ -119,8 +119,6 @@ python -m pytest tests/test_api
 >- [x] <code><strong>*FEATURES BY STORIES*</strong></code> - отображает распределение тестов по функционалу, который они проверяют
 >- [x] <code><strong>*EXECUTORS*</strong></code> - отображает исполнителя текущей сборки (ссылка на сборку в Jenkins)
 
-
-### :pushpin: Тест Сьюты
 <p align="center">
   <img src="resources/readme/allure_2.png" alt="Allure Report" width="900">
 </p>
