@@ -20,7 +20,7 @@ def test_check_device():
                 "qty": 1
             }
         }
-    response = myglo().post("rest/ru_ru/V1/carts/mine/items", json=body, auth=AmBearerAuthenticated("hCXriQ9U4QYoN@test.ru", "Test202020"))
+    response = myglo().post("rest/ru_ru/V1/carts/mine/items", json=body, auth=AmBearerAuthenticated(email='dfgdr33drgdr@test.ru', password='Test20202020]'))
 
     schema = Schema({
         "sku": str,
