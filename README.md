@@ -1,7 +1,7 @@
 # Проект по автоматизации тестирования сайта myglo.ru и мобильного приложения hh.ru
 <div style="display: flex">
-    <img width="50%" title="myglo.ru" src="resources/readme/myglo.jpg">
-    <img width="50%" title="hh.ru" src="resources/readme/hh.jpg">
+    <img width="30%" title="myglo.ru" src="resources/readme/myglo.jpg">
+    <img width="30%" title="hh.ru" src="resources/readme/hh.jpg">
 </div>
 
 
@@ -130,39 +130,6 @@ python -m pytest tests/test_api
   <img src="resources/readme/allure.png" alt="Allure Report" width="900">
 </p>
 
-[//]: # (## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps]&#40;https://allure.autotests.cloud/launch/15585&#41;)
-
-[//]: # ()
-[//]: # (### :pushpin: Основной дашборд)
-
-[//]: # ()
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="images/screens/AllureTestOps1.png" alt="dashboards" width="900">)
-
-[//]: # (</p>)
-
-[//]: # ()
-[//]: # (### :pushpin: Тест-кейсы)
-
-[//]: # ()
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="images/screens/AllureTestOps2.png" alt="test cases" width="900">)
-
-[//]: # (</p>)
-
-[//]: # ()
-[//]: # (## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с [Jira]&#40;https://jira.autotests.cloud/browse/AUTO-1349&#41;)
-
-[//]: # ()
-[//]: # (<p align="center">)
-
-[//]: # (  <img src="images/screens/Jira.png" alt="jira" width="1000">)
-
-[//]: # (</p>)
-
-[//]: # ()
 
 ## <img width="30px" title="Telegram" src="resources/readme/technology/telegram.png"> Уведомления в Telegram с использованием бота
 
