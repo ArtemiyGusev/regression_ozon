@@ -38,6 +38,7 @@ def test_check_category(element_click, element_check):
     allure.dynamic.tag("Mobile android application")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты hh")
+    allure.dynamic.story("Проверка открытия категорий приложения")
 
     with title('Закрываем форму авторизации'):
         browser.element('#fragment_intentions_onboarding_choose_direction_image_close').tap()
@@ -84,7 +85,7 @@ def test_check_change_language():
     allure.dynamic.tag("Mobile android application")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты hh")
-    allure.dynamic.story("Проверка страницы фильтров")
+    allure.dynamic.story("Проверка смены языка")
 
     with title('Закрываем форму авторизации'):
         browser.element('#fragment_intentions_onboarding_choose_direction_image_close').tap()

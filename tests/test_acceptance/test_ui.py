@@ -98,7 +98,7 @@ def test_checkout_button_enabled():
     allure.dynamic.tag("Web application")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты myglo.ru")
-    allure.dynamic.story("Проверка что кнопка оформить заказ стала активной после прохождения шагов на чекауте")
+    allure.dynamic.story("Проверка кнопки оформить заказ стала активной после прохождения шагов на чекауте")
 
     with allure.step('Открываем /customer/account/login'):
         url_open_size('/customer/account/login')
@@ -143,7 +143,7 @@ def test_add_my_device(name, number, email, comment, error):
     allure.dynamic.tag("Web application")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты myglo.ru")
-    allure.dynamic.story("Проверка что кнопка оформить заказ стала активной после прохождения шагов на чекауте")
+    allure.dynamic.story("Негативная проверка с разными данными полей заполнения формы обратной связи")
 
     with allure.step('Открываем /obratnaya-svyaz'):
         url_open_size('/obratnaya-svyaz')

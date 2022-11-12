@@ -36,6 +36,11 @@ def test_check_device():
 
 
 def test_get_info_customer():
+    allure.dynamic.tag("Web application Api")
+    allure.dynamic.severity(Severity.CRITICAL)
+    allure.dynamic.feature("Тесты myglo.ru")
+    allure.dynamic.story("Проверка личных данных пользователя")
+
     response = myglo().get("rest/ru_ru/V1/customers/me", auth=AmBearerAuthenticated("hCXriQ9U4QYoN@test.ru", "Test202020"))
 
     schema = Schema({
@@ -56,7 +61,7 @@ def test_register_user():
     allure.dynamic.tag("Web application Api")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты myglo.ru")
-    allure.dynamic.story("Проверка смены пароля кастомера, после регистрации")
+    allure.dynamic.story("Проверка регистрации устройства в профиле пользователя")
 
     body = {
         "customer": {
@@ -98,7 +103,7 @@ def test_delete_all_device_api():
     allure.dynamic.tag("Web application Api")
     allure.dynamic.severity(Severity.CRITICAL)
     allure.dynamic.feature("Тесты myglo.ru")
-    allure.dynamic.story("Проверка удаления девайся из корзину, после его добавления")
+    allure.dynamic.story("Проверка удаления девайса из корзины, после его добавления")
 
     body = {
         "cartItem":
