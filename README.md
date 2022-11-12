@@ -105,14 +105,6 @@ python -m pytest tests/test_api
   <img src="resources/readme/jenkins_param.png" alt="job" width="800">
 </p>
 
-*После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
-значок <img width="2%" title="Allure Report" src="resources/readme/Allure_Report.svg"><code><strong>*Allure
-Report*</strong></code>, кликнув по которому, откроется страница с сформированным html-отчетом.*
-
-<p align="center">
-  <img src="resources/readme/jenkins_2.png" alt="job" width="1000">
-</p>
-
 ## <img width="30px" title="Jenkins" src="resources/readme/technology/Jenkins.png"> Отчет о результатах тестирования в Allure Report
 
 ### :pushpin: Общая информация
@@ -127,11 +119,13 @@ Report*</strong></code>, кликнув по которому, откроетс�
 >- [x] <code><strong>*FEATURES BY STORIES*</strong></code> - отображает распределение тестов по функционалу, который они проверяют
 >- [x] <code><strong>*EXECUTORS*</strong></code> - отображает исполнителя текущей сборки (ссылка на сборку в Jenkins)
 
+
+### :pushpin: Тест Сьюты
 <p align="center">
   <img src="resources/readme/allure_2.png" alt="Allure Report" width="900">
 </p>
 
-### :pushpin: Тесты
+### :pushpin: Детали теста
 <p align="center">
   <img src="resources/readme/allure.png" alt="Allure Report" width="900">
 </p>
