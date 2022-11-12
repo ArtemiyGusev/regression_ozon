@@ -1,6 +1,8 @@
 # Проект по автоматизации тестирования сайта myglo.ru и мобильного приложения hh.ru
-
-<img width="50%" title="KazanExpress.ru" src="resources/readme/myglo.jpg">
+<div style="display: flex">
+    <img width="50%" title="myglo.ru" src="resources/readme/myglo.jpg">
+    <img width="50%" title="hh.ru" src="resources/readme/hh.jpg">
+</div>
 
 
 ## :page_with_curl:	Содержание
@@ -23,7 +25,7 @@
 
 <p  align="center">
 Pytest, Python, Selene \ Selenium, PyCharm, Requests, Appium, Jenkins, Selenoid, Allure, Jira, Github, Telegram
-</br>
+<br/>
 <img width="50px" title="Pytest" src="resources/readme/technology/pytest.png">
 <img width="50px" title="Python" src="resources/readme/technology/python.png">
 <img width="50px" title="Selene" src="resources/readme/technology/selene.png">
@@ -170,14 +172,14 @@ python -m pytest tests/test_api
 <img title="Telegram Notifications" src="resources/readme/telegram.png">
 </p>
 
-[//]: # (## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid)
+## <img width="4%" title="Selenoid" src="resources/readme/technology/selenoid.png"> Пример запуска теста в Selenoid
 
-[//]: # ()
-[//]: # (> К каждому тесту в отчете прилагается видео.)
 
-[//]: # (<p align="center">)
+> К каждому тесту в отчете прилагается видео.
 
-[//]: # (  <img title="Selenoid Video" src="images/gif/video.gif">)
+<p align="center">
 
-[//]: # (</p>)
+  <img title="Selenoid Video" src="resources/readme/autotest_gif.gif">
+
+</p>
 
