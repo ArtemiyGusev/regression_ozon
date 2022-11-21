@@ -8,6 +8,7 @@ from selene.support.shared.jquery_style import s
 from base_page.pages.pick_point import select_pick_point
 from base_page.pages.change_city import change_city
 from base_page.pages.sign_in import sign_in
+from base_page.pages.passing_modal import passing_modal
 from selene import be
 from base_page.controls.application_manager import app
 

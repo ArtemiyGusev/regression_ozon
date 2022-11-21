@@ -26,12 +26,6 @@ def remove_element(element):
         pass
 
 
-def passing_modal():
-    if s("#age-verification").matching(be.visible):
-        s("#age-verification").type('11111990')
-        s("[class='age-verification-form__btn g-btn']").click()
-
-
 def scroll_click(element):
     browser.execute_script(
         f"document.querySelector('{element}').scrollIntoView({{block: 'center', inline: 'nearest'}})")
