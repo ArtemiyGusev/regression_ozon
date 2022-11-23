@@ -23,7 +23,6 @@ def load_env():
 
 @pytest.fixture(scope='function', autouse=True)
 def driver_init(request):
-#def driver_init():
     browser_version = request.config.getoption('--browser_version')
     options = Options()
     prefs = {"profile.default_content_setting_values.geolocation": 2}
@@ -54,9 +53,6 @@ def driver_init(request):
     browser.config.base_url = 'https://www.myglo.ru'
 
     browser_config = Browser(Config(driver))
-    #browser.config.browser_name = 'chrome'
-    #browser.config.base_url = 'https://myglo.ru'
-    #browser_config = browser.config
 
     yield browser_config
 
