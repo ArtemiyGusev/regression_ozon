@@ -47,7 +47,7 @@ Pytest, Python, Selene \ Selenium, PyCharm, Requests, Appium, Jenkins, Selenoid,
 >
 >*<code><strong>*Selenoid*</strong></code> используется для запуска браузеров в контейнерах  <code><strong>*Docker*</strong></code>.*
 >
->*<code><strong>*Allure Report, Jira, Telegram Bot*</strong></code> используются для визуализации результатов тестирования.*
+>*<code><strong>*Allure Report, Telegram Bot*</strong></code> используются для визуализации результатов тестирования.*
 >
 >*Для запуска мобильных тестов используется <code><strong>*Appium*</strong></code> и <code><strong>*Android studio*</strong></code>.*
 
